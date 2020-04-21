@@ -644,7 +644,7 @@ dmProviderDatabase::makeProviderInfo(char const* s)
   if ((p = cJSON_GetObjectItem(json, "provider")) != nullptr)
     providerInfo->setProviderName(p->valuestring);
   if ((p = cJSON_GetObjectItem(json, "is_list")) != nullptr)
-    providerInfo->setIsList(p->type == true);
+    providerInfo->setIsList(p->type == cJSON_True);
 
   // rtLog_Debug("adding object:%s", providerInfo->objectName().c_str());
   if ((p = cJSON_GetObjectItem(json, "properties")) != nullptr)
