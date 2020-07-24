@@ -676,10 +676,13 @@ dmProviderDatabase::makeProviderInfo(char const* s)
       if ((q = cJSON_GetObjectItem(props, "type")) != nullptr)
         prop.setType(dmValueType_fromString(q->valuestring));
       if ((q = cJSON_GetObjectItem(props, "optional")) != nullptr)
-        prop.setIsOptional(q->type == true);
+      {
+        prop.setIsOptional(q->type == cJSON_True);
+      }
       if ((q = cJSON_GetObjectItem(props, "writable")) != nullptr)
-        prop.setIsWritable(q->type == true);
-
+      {
+        prop.setIsWritable(q->type == cJSON_True);
+      }
       // rtLog_Info("add prop:%s", prop.name().c_str());
       providerInfo->addProperty(prop);
     }
