@@ -15,7 +15,8 @@
       {"name": "ThumbnailReadyNotification", "type": "string", "optional": false, "writable": true, "version": "2.0"},
       {"name": "LiveStreamReadyNotification", "type": "string", "optional": false, "writable": true, "version": "2.0"},
       {"name": "CVRReadyNotification", "type": "string", "optional": false, "writable": true, "version": "2.0"},
-      {"name": "ThermalMonitorNotification", "type": "string", "optional": false, "writable": true, "version": "2.0"}
+      {"name": "ThermalMonitorNotification", "type": "string", "optional": false, "writable": true, "version": "2.0"},
+      {"name": "PowerLostNotification", "type": "string", "optional": false, "writable": true, "version": "2.0"}
     ]
 }
 ~  
