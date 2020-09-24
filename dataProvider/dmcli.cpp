@@ -25,7 +25,12 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <unistd.h>
 #include "dmClient.h"
+
+#ifdef INCLUDE_BREAKPAD
+#include "breakpadwrap.h"
+#endif
 
 void print_help()
 {
@@ -116,6 +121,12 @@ int main(int argc, char *argv[])
   std::string param_list;
   bool recursive = false;
   rtLogLevel log_level = RT_LOG_FATAL;
+
+#ifdef INCLUDE_BREAKPAD
+  sleep(1);
+  BreakPadWrapExceptionHandler eh;
+  eh = newBreakPadWrapExceptionHandler();
+#endif
 
   #ifdef DEFAULT_DATAMODELDIR
   std::string datamodel_dir = DEFAULT_DATAMODELDIR;
